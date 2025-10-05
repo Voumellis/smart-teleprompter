@@ -72,6 +72,7 @@ Happy recording!`);
   const [userIsInteracting, setUserIsInteracting] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
   const [centerPaddingVh, setCenterPaddingVh] = useState(45);
+  const [showCenterLine, setShowCenterLine] = useState(false);
   const [showAim, setShowAim] = useState(true);
   const [showHighlight, setShowHighlight] = useState(true);
   const [aimOffsetX, setAimOffsetX] = useState(0);
@@ -1558,6 +1559,23 @@ Happy recording!`);
         overflow: "visible",
       }}
     >
+      {/* Center Line Indicator */}
+      {showCenterLine && (
+        <div
+          style={{
+            position: "fixed",
+            top: `${centerPaddingVh}vh`,
+            left: 0,
+            right: 0,
+            height: "2px",
+            backgroundColor: "#ff0000",
+            zIndex: 9999,
+            pointerEvents: "none",
+            opacity: 0.8,
+          }}
+        />
+      )}
+
       {/* Toolbar */}
       <div
         style={{
@@ -2458,6 +2476,10 @@ Happy recording!`);
                   max="60"
                   value={centerPaddingVh}
                   onChange={(e) => setCenterPaddingVh(Number(e.target.value))}
+                  onMouseDown={() => setShowCenterLine(true)}
+                  onMouseUp={() => setShowCenterLine(false)}
+                  onTouchStart={() => setShowCenterLine(true)}
+                  onTouchEnd={() => setShowCenterLine(false)}
                   style={{ width: "100%" }}
                 />
               </div>
