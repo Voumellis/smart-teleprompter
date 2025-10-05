@@ -1,17 +1,4 @@
 User-agent: *
 Allow: /
 
-# Allow all search engines to crawl the site
-Allow: /index.html
-Allow: /app.html
-Allow: /app.js
-Allow: /*.png
-Allow: /*.jpg
-Allow: /*.svg
-Allow: /*.ico
-
-# Sitemap location
 Sitemap: https://smartteleprompter.com/sitemap.xml
-
-# Crawl delay (optional)
-Crawl-delay: 1
