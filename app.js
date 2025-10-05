@@ -2807,6 +2807,52 @@ Happy recording!`);
           background: rgba(255, 255, 255, 0.5);
         }
         
+        /* Safari Range Slider Fix */
+        input[type="range"] {
+          -webkit-appearance: none;
+          appearance: none;
+          background: transparent;
+          cursor: pointer;
+        }
+        
+        input[type="range"]::-webkit-slider-track {
+          background: #333;
+          height: 4px;
+          border-radius: 2px;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          background: #fff;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb:hover {
+          background: #f0f0f0;
+        }
+        
+        /* Firefox Range Slider Fix */
+        input[type="range"]::-moz-range-track {
+          background: #333;
+          height: 4px;
+          border-radius: 2px;
+          border: none;
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+          background: #fff;
+          height: 16px;
+          width: 16px;
+          border-radius: 50%;
+          cursor: pointer;
+          border: 2px solid #333;
+        }
+        
         /* Responsive toolbar alignment */
         .toolbar-buttons {
           justify-content: flex-start;
