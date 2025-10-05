@@ -1,0 +1,89 @@
+{
+  "name": "smart-teleprompter",
+  "version": "1.0.0",
+  "description": "A free, open-source teleprompter application that uses real-time speech recognition to automatically follow your voice as you read",
+  "main": "app.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx serve . -l 3000",
+    "build": "echo 'No build process needed - static files'",
+    "test": "echo 'No tests specified'",
+    "lint": "echo 'No linter configured'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voumellis/smart-telepromter.git"
+  },
+  "keywords": [
+    "teleprompter",
+    "speech-recognition",
+    "voice-control",
+    "presentation",
+    "content-creation",
+    "web-speech-api",
+    "react",
+    "javascript",
+    "open-source",
+    "free"
+  ],
+  "author": {
+    "name": "Voumellis",
+    "email": "voumellis@example.com",
+    "url": "https://github.com/Voumellis"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Voumellis/smart-telepromter/issues"
+  },
+  "homepage": "https://github.com/Voumellis/smart-telepromter#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "files": [
+    "index.html",
+    "app.html",
+    "app.js",
+    "README.md",
+    "LICENSE",
+    "CONTRIBUTING.md",
+    "CHANGELOG.md"
+  ],
+  "devDependencies": {
+    "serve": "^14.2.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://buymeacoffee.com/nrjsoeq61"
+  },
+  "contributors": [
+    {
+      "name": "Voumellis",
+      "email": "voumellis@example.com",
+      "url": "https://github.com/Voumellis"
+    }
+  ],
+  "dependencies": {},
+  "peerDependencies": {},
+  "optionalDependencies": {},
+  "bundledDependencies": [],
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "preferGlobal": false,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Teleprompter - Free Voice-Controlled Teleprompter</title>
+    <meta
+      name="description"
+      content="Free, open-source teleprompter with real-time speech recognition. Perfect for content creators, presenters, and professionals. 20+ languages supported."
+    />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="./favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./apple-touch-icon.png"
+    />
+    <meta name="apple-mobile-web-app-title" content="Smart Teleprompter" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://smartteleprompter.com/" />
+    <meta
+      property="og:title"
+      content="Smart Teleprompter - Free Voice-Controlled Teleprompter"
+    />
+    <meta
+      property="og:description"
+      content="Free, open-source teleprompter with real-time speech recognition. Perfect for content creators, presenters, and professionals."
+    />
+    <meta
+      property="og:image"
+      content="https://smartteleprompter.com/share-image.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://smartteleprompter.com/" />
+    <meta
+      property="twitter:title"
+      content="Smart Teleprompter - Free Voice-Controlled Teleprompter"
+    />
+    <meta
+      property="twitter:description"
+      content="Free, open-source teleprompter with real-time speech recognition. Perfect for content creators, presenters, and professionals."
+    />
+    <meta
+      property="twitter:image"
+      content="https://smartteleprompter.com/share-image.png"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(255, 235, 59, 0.3);
+        }
+        50% {
+          box-shadow: 0 0 40px rgba(255, 235, 59, 0.6);
+        }
+      }
+      .pulse-glow {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white">
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col">
+      <!-- Navigation -->
+      <nav class="px-6 py-4 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <img
+              src="./logo.svg"
+              alt="Smart Teleprompter"
+              class="w-10 h-10"
+              onerror="this.style.display='none'"
+            />
+            <span class="text-xl font-bold">Smart Teleprompter</span>
+          </div>
+          <a
+            href="https://buymeacoffee.com/nrjsoeq61"
+            target="_blank"
+            rel="noopener"
+            class="px-4 py-2 bg-yellow-500 hover:bg-yellow-600 text-black font-semibold rounded-lg transition-colors"
+          >
+            ☕ Buy Me a Coffee
+          </a>
+        </div>
+      </nav>
+
+      <!-- Hero Content -->
+      <div class="flex-1 flex items-center justify-center px-6 py-20">
+        <div class="max-w-6xl mx-auto text-center">
+          <div class="float-animation mb-8">
+            <svg
+              class="w-32 h-32 mx-auto text-yellow-400"
+              fill="currentColor"
+              viewBox="0 0 434 358"
+            >
+              <path
+                d="M292.19 2.043c-5.714 2.285-10.539 6.476-12.698 11.047-1.143 2.413-3.429 12.445-4.953 22.35-6.603 42.92-32 196.698-32.761 198.476-.762 2.031-8.508-31.239-22.477-96.635-4.063-19.048-8.381-38.984-9.523-44.318-2.286-10.666-5.969-16.254-12.953-19.936-5.333-2.667-16.381-2.667-21.587 0-9.143 4.698-9.905 6.476-20.571 49.397l-10.032 40.253-68.19.635c-73.778.762-70.604.381-74.54 8.127-2.54 4.826-2.54 9.651 0 14.604 4.317 8.254 2.54 8 85.206 7.619l75.302-.381 3.555-3.302c5.46-5.079 6.476-8.127 12.699-34.286 3.174-13.46 6.095-24.381 6.603-24.381.762 0 10.412 43.048 25.523 113.27 6.096 28.699 10.159 44.826 12.064 47.873 7.746 12.445 29.587 12.318 38.222-.381 3.429-5.206 7.365-26.539 26.921-146.158 11.301-69.46 11.936-73.397 12.698-71.238.254.761 6.476 42.666 13.841 93.333 22.477 155.555 25.397 174.095 27.302 177.777 5.841 11.175 19.809 15.492 31.365 9.524 6.349-3.174 10.159-8.254 11.937-16.127 1.396-5.714 15.365-82.666 22.095-121.904 1.904-10.921 3.682-21.334 4.063-22.984.635-2.794 1.397-3.048 11.429-3.048h10.666l-.381-14.73-.38-14.857-18.667.254c-29.968.254-27.81-3.175-40.127 67.428-5.333 30.603-10.032 55.873-10.413 56.254q-.762.762-.762 0c0-.762-11.428-79.492-30.73-212.317-9.27-62.984-9.778-64.635-20.444-69.841-5.968-2.921-14.095-3.556-19.302-1.397"
+              />
+              <path
+                fill="#fff"
+                d="M6.351 112.886c-7.619 5.968-8.127 16.635-1.016 23.492l4.064 3.809 48.889.381c52.063.381 54.095.254 59.047-6.095 2.921-3.682 3.429-11.682 1.016-17.016-3.301-7.111-4.698-7.238-58.793-7.238-47.62 0-50.032.127-53.207 2.667M9.904 218.788c-5.714 2.539-8.762 6.476-9.524 12.317-.635 6.349 1.524 10.794 7.492 14.73l4.445 3.048H68.19c59.174 0 61.333-.254 66.92-6.349 5.588-6.35 3.683-18.159-3.682-23.111-4.064-2.667-115.556-3.429-121.524-.635"
+              />
+            </svg>
+          </div>
+
+          <h1
+            class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-yellow-200 to-yellow-400 bg-clip-text text-transparent"
+          >
+            Smart Teleprompter
+          </h1>
+
+          <p class="text-xl md:text-2xl text-gray-300 mb-4">
+            Your voice-controlled reading companion
+          </p>
+
+          <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto">
+            Free, open-source teleprompter that follows your voice in real-time.
+            Perfect for content creators, presenters, and professionals.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <a
+              href="./app.html"
+              class="pulse-glow px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black text-lg font-bold rounded-lg transition-all transform hover:scale-105"
+            >
+              🚀 Launch App
+            </a>
+            <a
+                href="https://github.com/Voumellis/smart-telepromter"
+              target="_blank"
+              rel="noopener"
+              class="px-8 py-4 bg-neutral-900/50 hover:bg-neutral-700 text-white text-lg font-semibold rounded-lg border border-gray-600 transition-all"
+            >
+              ⭐ View on GitHub
+            </a>
+          </div>
+
+          <!-- Features Grid -->
+          <div class="grid md:grid-cols-3 gap-8 mt-20">
+            <div
+              class="bg-neutral-900/50 p-8 rounded-xl border border-gray-800 hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">🎤</div>
+              <h3 class="text-xl font-bold mb-3">Voice Recognition</h3>
+              <p class="text-gray-400">
+                Real-time speech tracking with 20+ language support
+              </p>
+            </div>
+
+            <div
+              class="bg-neutral-900/50 p-8 rounded-xl border border-gray-800 hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">🎨</div>
+              <h3 class="text-xl font-bold mb-3">Fully Customizable</h3>
+              <p class="text-gray-400">
+                Adjust fonts, colors, speed, and spacing to your needs
+              </p>
+            </div>
+
+            <div
+              class="bg-neutral-900/50 p-8 rounded-xl border border-gray-800 hover:border-yellow-500 transition-colors"
+            >
+              <div class="text-4xl mb-4">📱</div>
+              <h3 class="text-xl font-bold mb-3">Works Everywhere*</h3>
+              <p class="text-gray-400">
+                Responsive design for desktop, tablet, and mobile
+              </p>
+              <p class="text-xs text-yellow-400 mt-2">
+                *See compatibility notes below for mobile limitations
+              </p>
+            </div>
+          </div>
+
+          <!-- Keyboard Shortcuts -->
+          <div
+            class="mt-20 p-8 bg-neutral-900/50 rounded-xl border border-gray-800"
+          >
+            <h3 class="text-2xl font-bold mb-6">⌨️ Keyboard Shortcuts</h3>
+            <div class="grid md:grid-cols-2 gap-4 text-sm">
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Microphone</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">V</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Auto-scroll</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">P</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Word Highlighting</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">H</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Reset</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">R</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Language</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">L</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Settings</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">E</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Script Editor</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">S</kbd>
+              </div>
+              <div
+                class="flex justify-between items-center p-3 bg-black rounded-lg"
+              >
+                <span class="font-semibold">Fullscreen</span>
+                <kbd class="px-2 py-1 bg-gray-700 rounded text-xs">F</kbd>
+              </div>
+            </div>
+          </div>
+
+          <!-- Compatibility Information -->
+          <div
+            class="mt-8 p-8 bg-neutral-900/50 rounded-xl border border-gray-800"
+          >
+            <h3 class="text-2xl font-bold mb-6">
+              ⚠️ Important Compatibility Notes
+            </h3>
+            <div class="space-y-4 text-sm">
+              <div
+                class="p-4 bg-green-900/20 border border-green-500/30 rounded-lg"
+              >
+                <h4 class="font-bold text-green-400 mb-2">
+                  ✅ For Best Experience:
+                </h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-300">
+                  <li>Use Desktop/Laptop with Chrome browser</li>
+                  <li>Stable Internet Connection recommended</li>
+                  <li>Microphone Access required for voice recognition</li>
+                </ul>
+              </div>
+              <div
+                class="p-4 bg-yellow-900/20 border border-yellow-500/30 rounded-lg"
+              >
+                <h4 class="font-bold text-yellow-400 mb-2">
+                  ⚠️ Mobile Limitations:
+                </h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-300">
+                  <li>
+                    <strong>iPhone/iPad:</strong> Only Auto-scroll mode works
+                    (no voice recognition)
+                  </li>
+                  <li>
+                    <strong>Android:</strong> Voice recognition may work but
+                    performance varies
+                  </li>
+                  <li>
+                    <strong>Mobile browsers:</strong> Limited Web Speech API
+                    support
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="p-4 bg-blue-900/20 border border-blue-500/30 rounded-lg"
+              >
+                <h4 class="font-bold text-blue-400 mb-2">
+                  🌐 Browser Compatibility:
+                </h4>
+                <ul class="list-disc list-inside space-y-1 text-gray-300">
+                  <li>
+                    <strong>Chrome/Chromium:</strong> ✅ Recommended - best
+                    performance
+                  </li>
+                  <li><strong>Edge:</strong> ✅ Good performance</li>
+                  <li>
+                    <strong>Safari:</strong> ⚠️ Limited functionality, no voice
+                    recognition on iOS
+                  </li>
+                  <li>
+                    <strong>Firefox:</strong> ❌ No Web Speech API support
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Supported Languages -->
+          <div
+            class="mt-8 p-8 bg-neutral-900/50 rounded-xl border border-gray-800"
+          >
+            <h3 class="text-2xl font-bold mb-6">🌍 20+ Languages Supported</h3>
+            <div class="flex flex-wrap justify-center gap-3 text-sm">
+              <span class="px-4 py-2 bg-black rounded-full">🇺🇸 English</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇬🇷 Greek</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇪🇸 Spanish</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇫🇷 French</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇩🇪 German</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇮🇹 Italian</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇧🇷 Portuguese</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇷🇺 Russian</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇨🇳 Chinese</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇯🇵 Japanese</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇰🇷 Korean</span>
+              <span class="px-4 py-2 bg-black rounded-full">🇸🇦 Arabic</span>
+              <span class="px-4 py-2 bg-black rounded-full">+8 more</span>
+            </div>
+          </div>
+
+          <!-- Tips for Best Results -->
+          <div
+            class="mt-8 p-8 bg-neutral-900/50 rounded-xl border border-gray-800"
+          >
+            <h3 class="text-2xl font-bold mb-6">💡 Tips for Best Results</h3>
+            <div class="grid md:grid-cols-2 gap-6 text-sm">
+              <div>
+                <h4 class="font-bold text-yellow-400 mb-3">
+                  🎤 Voice Recognition:
+                </h4>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                  <li>
+                    Use Chrome browser on Desktop/Laptop for optimal performance
+                  </li>
+                  <li>
+                    External microphones provide better accuracy than built-in
+                    mics
+                  </li>
+                  <li>Minimize background noise for improved tracking</li>
+                  <li>Speak at natural pace with clear pronunciation</li>
+                </ul>
+              </div>
+              <div>
+                <h4 class="font-bold text-yellow-400 mb-3">⚙️ Technical:</h4>
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                  <li>
+                    Stable internet connection required (5+ Mbps recommended)
+                  </li>
+                  <li>
+                    HTTPS connection required for microphone access in
+                    production
+                  </li>
+                  <li>Allow microphone access when prompted</li>
+                  <li>For mobile: Use Auto-scroll mode (P key)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="border-t border-gray-800 py-8 px-6">
+        <div class="max-w-7xl mx-auto text-center text-gray-400">
+          <p class="mb-4">Made with ❤️ for content creators worldwide</p>
+          <div class="flex justify-center gap-6 text-sm">
+            <a
+              href="https://buymeacoffee.com/nrjsoeq61"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-yellow-400 transition-colors"
+              >Support Development</a
+            >
+            <a
+                href="https://github.com/Voumellis/smart-telepromter"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-yellow-400 transition-colors"
+              >GitHub</a
+            >
+            <a
+              href="https://github.com/savvas/smart-teleprompter/issues"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-yellow-400 transition-colors"
+              >Report Issue</a
+            >
+          </div>
+          <p class="mt-4 text-xs">Open Source • MIT License • Free Forever</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
