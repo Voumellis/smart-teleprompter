@@ -1978,9 +1978,9 @@ Happy recording!`);
               marginBottom: 12,
             }}
           >
-            <h3 style={{ color: "white", margin: 0 }}>
+            <h2 style={{ color: "white", margin: 0 }}>
               {showEditor ? "Script Editor" : "Settings"}
-            </h3>
+            </h2>
             <div style={{ marginLeft: "auto" }}>
               <button
                 onClick={() => {
