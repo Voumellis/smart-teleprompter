@@ -13,6 +13,12 @@ function SmartTeleprompter() {
 QUICK START
 Press the microphone button (or V) to start voice tracking. The app will highlight words as you speak them and smoothly scroll to keep your current position centered on screen.
 
+💾 DATA STORAGE
+Your settings and script content are automatically saved to your browser's localStorage. This means:
+• Your preferences persist between sessions
+• Your script is preserved when you reload the page
+• Data is stored locally on your device (no cloud storage)
+
 KEYBOARD SHORTCUTS
 V - Start/Stop microphone
 P - Play/Pause auto-scroll
