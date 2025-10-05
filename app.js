@@ -2,7 +2,7 @@ const { useState, useEffect, useRef } = React;
 
 function SmartTeleprompter() {
   const [text, setText] =
-    useState(`Welcome to Voice Prompter the free, open-source teleprompter application that uses real-time speech recognition to automatically follow your voice as you read.
+    useState(`Welcome to Smart Teleprompter the free, open-source teleprompter application that uses real-time speech recognition to automatically follow your voice as you read.
 
 ⚠️ IMPORTANT COMPATIBILITY NOTES:
 • For BEST EXPERIENCE: Use Desktop/Laptop with Chrome browser
@@ -45,7 +45,7 @@ TIPS FOR BEST RESULTS
 - Stable internet connection required (5+ Mbps recommended)
 - Speak at natural pace with clear pronunciation
 
-This project is completely free and open source. If you find it useful, consider supporting development at voiceprompter.app
+This project is completely free and open source. If you find it useful, consider supporting development at smartteleprompter.com
 
 Happy recording!`);
 
@@ -1373,7 +1373,7 @@ Happy recording!`);
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {
       try {
-        const savedLanguage = localStorage.getItem("voicePrompterLanguage");
+        const savedLanguage = localStorage.getItem("smartTeleprompterLanguage");
         if (savedLanguage && savedLanguage.trim()) {
           console.log("Language loaded from localStorage:", savedLanguage);
           setLanguage(savedLanguage);
@@ -1399,7 +1399,7 @@ Happy recording!`);
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage && language) {
       try {
-        localStorage.setItem("voicePrompterLanguage", language);
+        localStorage.setItem("smartTeleprompterLanguage", language);
         console.log("Language saved to localStorage:", language);
       } catch (error) {
         console.error("Failed to save language to localStorage:", error);
@@ -2729,7 +2729,7 @@ Happy recording!`);
             ×
           </button>
           <div style={{ marginBottom: "8px", fontWeight: "bold" }}>
-            Enjoying Voice Prompter?
+            Enjoying Smart Teleprompter?
           </div>
           <div style={{ marginBottom: "8px" }}>
             Support development with a coffee ☕
