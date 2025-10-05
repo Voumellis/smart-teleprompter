@@ -54,7 +54,7 @@ A free, open-source teleprompter application that uses real-time speech recognit
 - 🇨🇳 Chinese
 - 🇯🇵 Japanese
 - 🇰🇷 Korean
-- 🇦🇷 Arabic
+- 🇸🇦 Arabic
 - 🇮🇳 Hindi
 - 🇹🇷 Turkish
 
