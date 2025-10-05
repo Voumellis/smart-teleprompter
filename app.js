@@ -2105,7 +2105,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((fontSize - 16) / (80 - 16)) * 100}%`,
+                      left: `calc(${
+                        ((fontSize - 16) / (80 - 16)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2168,7 +2170,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((sidePaddingVw - 0) / (40 - 0)) * 100}%`,
+                      left: `calc(${
+                        ((sidePaddingVw - 0) / (40 - 0)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2359,7 +2363,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((lineHeight - 1) / (3 - 1)) * 100}%`,
+                      left: `calc(${
+                        ((lineHeight - 1) / (3 - 1)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2423,7 +2429,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((paragraphSpacingPx - 0) / (40 - 0)) * 100}%`,
+                      left: `calc(${
+                        ((paragraphSpacingPx - 0) / (40 - 0)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2486,7 +2494,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((scrollSpeed - 10) / (200 - 10)) * 100}%`,
+                      left: `calc(${
+                        ((scrollSpeed - 10) / (200 - 10)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2549,7 +2559,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((lookaheadWindow - 1) / (20 - 1)) * 100}%`,
+                      left: `calc(${
+                        ((lookaheadWindow - 1) / (20 - 1)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2619,7 +2631,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((textOpacity - 0.2) / (1 - 0.2)) * 100}%`,
+                      left: `calc(${
+                        ((textOpacity - 0.2) / (1 - 0.2)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2684,7 +2698,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((aimOpacity - 0) / (1 - 0)) * 100}%`,
+                      left: `calc(${
+                        ((aimOpacity - 0) / (1 - 0)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2819,7 +2835,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((uiOpacity - 0.2) / (1 - 0.2)) * 100}%`,
+                      left: `calc(${
+                        ((uiOpacity - 0.2) / (1 - 0.2)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
@@ -2913,9 +2931,9 @@ Happy recording!`);
                       <div
                         className="custom-slider-thumb"
                         style={{
-                          left: `${
+                          left: `calc(${
                             ((aimOffsetX - -400) / (400 - -400)) * 100
-                          }%`,
+                          }% - 8px)`,
                         }}
                         onMouseDown={(e) => {
                           e.preventDefault();
@@ -2987,9 +3005,9 @@ Happy recording!`);
                       <div
                         className="custom-slider-thumb"
                         style={{
-                          left: `${
+                          left: `calc(${
                             ((aimOffsetY - -300) / (300 - -300)) * 100
-                          }%`,
+                          }% - 8px)`,
                         }}
                         onMouseDown={(e) => {
                           e.preventDefault();
@@ -3085,7 +3103,9 @@ Happy recording!`);
                   <div
                     className="custom-slider-thumb"
                     style={{
-                      left: `${((centerPaddingVh - 20) / (60 - 20)) * 100}%`,
+                      left: `calc(${
+                        ((centerPaddingVh - 20) / (60 - 20)) * 100
+                      }% - 8px)`,
                     }}
                     onMouseDown={(e) => {
                       e.preventDefault();
