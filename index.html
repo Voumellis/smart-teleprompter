@@ -62,12 +62,20 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @keyframes float {
-        0%,
         100% {
-          transform: translateY(0px);
+          transform: translateX(0px);
+          scale: 1;
+          opacity: 0.6;
         }
         50% {
-          transform: translateY(-20px);
+          transform: translateX(20px);
+          scale: 1.1;
+          opacity: 1;
+        }
+        0% {
+          transform: translateX(0px);
+          scale: 1;
+          opacity: 0.6;
         }
       }
       .float-animation {
@@ -100,7 +108,9 @@
               class="w-10 h-10"
               onerror="this.style.display='none'"
             />
-            <span class="text-xl font-bold">Smart Teleprompter</span>
+            <span class="text-2xl md:text-3xl font-bold"
+              >Smart Teleprompter</span
+            >
           </div>
           <a
             href="https://buymeacoffee.com/nrjsoeq61"
