@@ -58,7 +58,14 @@
       name="twitter:image"
       content="https://raw.githubusercontent.com/Voumellis/smart-telepromter/main/smartTeleprompter.jpg"
     />
-
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0WB94SE96L"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-0WB94SE96L');
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @keyframes float {
@@ -426,7 +433,7 @@
                   (no cloud storage)
                 </li>
                 <li>
-                  <strong>Privacy:</strong> No data is sent to external servers
+                  <strong>Privacy:</strong> Your scripts and settings stay on your device. We use Google Analytics to track anonymous usage statistics for page views, country, browser
                 </li>
               </ul>
               <p class="text-green-400 font-semibold">
