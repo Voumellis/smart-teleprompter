@@ -4,7 +4,7 @@ A free, open-source teleprompter application that uses real-time speech recognit
 
 **🌐 Live at [smarttelepromter.com](https://smarttelepromter.com)**
 
-![Version](https://img.shields.io/badge/Version-2.2.0-blue.svg)
+![Version](https://img.shields.io/badge/Version-2.3.0-blue.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 ![React](https://img.shields.io/badge/React-19-blue.svg)
 ![Vite](https://img.shields.io/badge/Vite-6-purple.svg)
@@ -78,6 +78,7 @@ A free, open-source teleprompter application that uses real-time speech recognit
 - 🇸🇦 Arabic
 - 🇮🇳 Hindi
 - 🇹🇷 Turkish
+- 🇮🇩 Indonesian
 
 ## 🚀 Quick Start
 

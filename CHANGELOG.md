@@ -5,6 +5,19 @@ All notable changes to Smart Teleprompter will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-11-16
+
+### Added
+
+- 🇮🇩 **Indonesian** (`id-ID`) voice tracking — community request
+- 🇳🇴🇩🇰🇫🇮 **Norwegian, Danish and Finnish** in the language selector — they were already listed on the landing page and in the README but missing from the app
+
+### Fixed
+
+- 🌍 **Voice tracking in non-Latin languages**: word normalization only kept `a-z`, Greek letters and digits, so every Russian, Arabic, Hindi, Korean, Chinese and Japanese word was reduced to an empty string and the script never advanced. Normalization is now Unicode-aware (letters and digits of any script; accents, Arabic short vowels and punctuation still stripped)
+- 🈶 **Chinese & Japanese word splitting**: scripts and Chrome transcripts in these languages have no spaces, so a whole sentence counted as one word. Unspaced runs (Han, Kana, Thai) are now split with `Intl.Segmenter` on both sides; they still render without spaces
+- 🔢 **Word count** in the script library now counts Chinese/Japanese words correctly
+
 ## [2.2.0] - 2026-07-02
 
 ### Added

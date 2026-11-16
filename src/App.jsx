@@ -1,4 +1,5 @@
 import { useState, useEffect, useLayoutEffect, useRef, memo } from "react";
+import { splitWords, normalizeWord } from "./words";
 
 // Inline SVG icons (Heroicons v2.1.1 outline, MIT). Inlined instead of
 // loading from unpkg.com so the UI has zero external requests, renders
@@ -54,6 +55,7 @@ const CO_HOST_LINE_RE = /^\s*(>>|@[^\s:]{1,30}:)/;
 // highlight and the line gaining it re-render. Large scripts stay smooth.
 const TeleprompterLine = memo(function TeleprompterLine({
   words,
+  glue, // glue[i] true = no space after word i (unspaced CJK/Thai segments)
   lineIdx,
   lineStart,
   activeIndex, // global index of the current word if it is in this line, else -1
@@ -101,7 +103,8 @@ const TeleprompterLine = memo(function TeleprompterLine({
             }}
             onClick={() => onWordClick(index)}
           >
-            {word}{" "}
+            {word}
+            {glue && glue[i] ? "" : " "}
           </span>
         );
       })}
@@ -278,7 +281,7 @@ KEY FEATURES
 - Paragraph and word highlighting modes
 
 SUPPORTED LANGUAGES
-🇺🇸 English (US) • 🇬🇧 English (UK) • 🇪🇸 Spanish (Spain) • 🇲🇽 Spanish (Mexico) • 🇫🇷 French • 🇩🇪 German • 🇮🇹 Italian • 🇧🇷 Portuguese (Brazil) • 🇵🇹 Portuguese (Portugal) • 🇷🇺 Russian • 🇨🇳 Chinese • 🇯🇵 Japanese • 🇰🇷 Korean • 🇸🇦 Arabic • 🇮🇳 Hindi • 🇹🇷 Turkish • 🇳🇱 Dutch • 🇬🇷 Greek • 🇵🇱 Polish • 🇸🇪 Swedish
+🇺🇸 English (US) • 🇬🇧 English (UK) • 🇪🇸 Spanish (Spain) • 🇲🇽 Spanish (Mexico) • 🇫🇷 French • 🇩🇪 German • 🇮🇹 Italian • 🇧🇷 Portuguese (Brazil) • 🇵🇹 Portuguese (Portugal) • 🇷🇺 Russian • 🇨🇳 Chinese • 🇯🇵 Japanese • 🇰🇷 Korean • 🇸🇦 Arabic • 🇮🇳 Hindi • 🇹🇷 Turkish • 🇳🇱 Dutch • 🇬🇷 Greek • 🇵🇱 Polish • 🇸🇪 Swedish • 🇳🇴 Norwegian • 🇩🇰 Danish • 🇫🇮 Finnish • 🇮🇩 Indonesian
 
 TIPS FOR BEST RESULTS
 - Use Chrome browser on Desktop/Laptop for optimal performance
@@ -374,10 +377,15 @@ Happy recording!`);
     { code: "el-GR", label: "🇬🇷 Ελληνικά" },
     { code: "pl-PL", label: "🇵🇱 Polski" },
     { code: "sv-SE", label: "🇸🇪 Svenska" },
+    { code: "nb-NO", label: "🇳🇴 Norsk" },
+    { code: "da-DK", label: "🇩🇰 Dansk" },
+    { code: "fi-FI", label: "🇫🇮 Suomi" },
+    { code: "id-ID", label: "🇮🇩 Bahasa Indonesia" },
   ];
   const [paragraphHighlightOpacity, setParagraphHighlightOpacity] =
     useState(0.12);
   const [linesWords, setLinesWords] = useState([]);
+  const [linesGlue, setLinesGlue] = useState([]);
   const [lineStartIndex, setLineStartIndex] = useState([]);
   const [showEditor, setShowEditor] = useState(false);
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -493,7 +501,11 @@ Happy recording!`);
         chosen && chosen[0] && chosen[0].transcript ? chosen[0].transcript : "";
 
       // Split σε tokens ΑΜΑ υπάρχει τουλάχιστον μία λέξη
-      const tokens = transcript.split(/\s+/).map(normalizeWord).filter(Boolean);
+      // Same splitter as the script (segments Chinese/Japanese transcripts,
+      // which Chrome returns without spaces)
+      const tokens = splitWords(transcript)
+        .words.map(normalizeWord)
+        .filter(Boolean);
       if (tokens.length === 0) return;
 
       const isFinal = !!(chosen && chosen.isFinal);
@@ -1087,23 +1099,12 @@ Happy recording!`);
     return false;
   };
 
-  const normalizeWord = (input) => {
-    if (!input) return "";
-    return input
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/ς/g, "σ")
-      .replace(/[^a-zA-Zα-ω0-9]+/g, "")
-      .trim();
-  };
-
   useEffect(() => {
     const lines = text.split(/\r?\n/);
     linesRawRef.current = lines;
-    const linesWords = lines.map((ln) =>
-      ln.split(/\s+/).filter((w) => w.trim().length > 0)
-    );
+    // splitWords also segments unspaced scripts (Chinese/Japanese/Thai)
+    const linesSplit = lines.map((ln) => splitWords(ln));
+    const linesWords = linesSplit.map((sp) => sp.words);
     linesWordsRef.current = linesWords;
 
     // Which lines belong to a co-host (">>" / "@Name:" prefix)
@@ -1125,6 +1126,7 @@ Happy recording!`);
     normalizedWordsRef.current = flatWords.map(normalizeWord);
     skippableWordsRef.current = skippable;
     setLinesWords(linesWords);
+    setLinesGlue(linesSplit.map((sp) => sp.glue));
     setLineStartIndex(starts);
     setLineIsCoHost(lineIsCoHostArr);
   }, [text]);
@@ -2878,7 +2880,7 @@ Happy recording!`);
                               <div style={{ color: "#666", fontSize: "10px", marginTop: "1px" }}>
                                 {(languagesList.find((l) => l.code === script.language) || {}).label || script.language || "—"}
                                 {" · "}
-                                {script.text.split(/\s+/).filter(Boolean).length} words
+                                {splitWords(script.text).words.length} words
                               </div>
                             </div>
                             <button
@@ -4334,6 +4336,7 @@ Happy recording!`);
               <TeleprompterLine
                 key={lineIdx}
                 words={lineWordsLocal}
+                glue={linesGlue[lineIdx]}
                 lineIdx={lineIdx}
                 lineStart={lineStart}
                 activeIndex={activeIndex}
